@@ -6,12 +6,24 @@
 	<style>
 		h1{text-align:center; font-size:4vw; font-variant:small-caps;}
 		#logo{margin-left:10%; border-right-style:solid; padding-right:10%; border-width:0.3vw; width:20%; height:20%;}
-		.img{margin-left:10%; height:20vw; width:40%; object-fit:cover; margin-right:7.5%;}
+		#shifting-img{margin-left:10%; height:20vw; width:40%; object-fit:cover; margin-right:7.5%; transition: 0.3s}
 	</style>
 </head>
 <body>
 	<h1>–––––– Uniqlo's Impact ––––––</h1>
 	<img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UNIQLO_logo.svg/2058px-UNIQLO_logo.svg.png">
-	<img class="img" src="https://visitkop.com/wp-content/uploads/2023/04/uniqlo.jpg">
+	<img id="shifting-img" src="https://visitkop.com/wp-content/uploads/2023/04/uniqlo.jpg">
+
+<script type="text/javascript">
+	var images = ['https://visitkop.com/wp-content/uploads/2023/04/uniqlo.jpg',
+	'https://cdn.houstonpublicmedia.org/wp-content/uploads/2024/01/25121202/tok401-47_2010_141232_high.webp',
+	'https://miro.medium.com/v2/resize:fit:1024/1*GiLNczN5oyqMRBejl9Lq0A.jpeg',
+	'https://images.livemint.com/img/2019/10/03/1600x900/_DSC1997_1570112922089.jpg']
+	setInterval(function(){
+		var random = Math.floor(Math.random() * 4);
+		document.getElementById("shifting-img").src=images[random];
+	}, 10000);
+</script>
+
 </body>
 </html>
