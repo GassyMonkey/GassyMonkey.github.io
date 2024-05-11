@@ -2,21 +2,39 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Uniqlo's Impact on Society </title>
+	<title>Uniqlo's Impact on Society</title>
 	<style>
 		h1{margin-top:0.001%; text-align:center; font-size:4vw; font-variant:small-caps;}
 		#logo{margin-left:10%; border-right-style:solid; padding-right:10%; border-width:0.3vw; width:20%; height:20%;}
 		#shifting-img{margin-left:10%; height:20vw; width:40%; object-fit:cover; margin-right:7.5%; transition: 0.3s}
-		#vid{margin-top:1%; display: block; margin-left: auto; margin-right: auto; height:20.25vw; width:36vw;}
+		#vid{display: block; margin-left: auto; margin-right: auto; height:15.75vw; width:28vw; display:none;}
+		#schizo-div{margin-top:1%; display: flex; margin-left: auto; margin-right: auto; height:15.75vw; width:99vw; justify-content:center;}
+		button{margin-top:1%; display: inline-block; height:3vw; width:10vw; outline:none; cursor:pointer; font-size:1.5vw; font-weight:600; border-radius:1vw;
+		  border:none; background: #fe0000; color:#fff; text-align: center; margin-left:10%; font-variant:small-caps;}
+		#innovation-text{display:none; margin-left:10%; width:41vw; font-size:1.75vw; text-indent:3vw;}
+		#history-text{display:none; margin-left:10%; width:41vw; font-size:1.75vw; text-indent:3vw;}
+		#innovation-img{height:15.75vw; width:28vw; display:none; margin: 0 auto 0 10%; object-fit:cover;}
+		#history-img{height:15.75vw; width:28vw; display:none; margin: 0 auto 0 10%; object-fit:cover;}
 	</style>
 </head>
 <body>
 	<h1>–––––– Uniqlo's Impact ––––––</h1>
 	<img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UNIQLO_logo.svg/2058px-UNIQLO_logo.svg.png">
 	<img id="shifting-img" src="https://visitkop.com/wp-content/uploads/2023/04/uniqlo.jpg">
-	<iframe id="vid" src="https://www.youtube.com/embed/n_Dv4JMiwK8?si=-tLEkcLjBunI2-87&amp;start=300&autoplay=1&mute=1" 
-	title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-	referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<button type="button" onclick="historyButton()" style="margin-left:25%;">History</button>
+	<button type="button" onclick="innovationButton()">Innovations</button>
+	<button type="button" onclick="videoButton()">Video</button>
+
+ 	<div id="schizo-div">
+  		<p id="history-text">First opened by Tadashi Yanai in 1984 in Hiroshima and originally named it Unique Clothing Warehouse. The name was later changed to Uniqlo in 1988. Grew popular through its sloganed "Made for All" clothing and innovative fabrics. Known for their high-quality, low cost clothing.</p>
+      <img id="history-img" src="https://www.heddels.com/wp-content/uploads/2019/10/uniqlo-a-history-of-simplicity-to-global-domination-the-first-uniqlo-store-in-hiroshima-in-1984-under-the-name-unique-clothing-warehouse-image-via-south-china-morning-post.jpg">
+  		<p id="innovation-text">Uniqlo is know for their innovative fabrics such as HeatTech, AIRism, and LifeWear. All are signature to the brand with many imitators attempted to recreate the fabrics. HeatTech keeps the wearer warm while AIRism keeps the wearer cool. Their most popular, LifeWear, keeps the user comfortable.</p>
+  		<img id="innovation-img" src="https://www.uniqlo.com/jp/en/contents/lifewear-magazine/assets/img/thumb-archives.png">
+  		<iframe id="vid" src="https://www.youtube.com/embed/n_Dv4JMiwK8?si=-tLEkcLjBunI2-87&amp;start=300&autoplay=1&mute=1" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+		referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+	
   
 <script type="text/javascript">
 	var images = ['https://visitkop.com/wp-content/uploads/2023/04/uniqlo.jpg',
@@ -27,6 +45,27 @@
 		var random = Math.floor(Math.random() * 4);
 		document.getElementById("shifting-img").src=images[random];
 	}, 5000);
+	function hideAll(){
+	  document.getElementById("history-text").style.display="none";
+	  document.getElementById("innovation-text").style.display="none";
+	  document.getElementById("vid").style.display="none";
+    document.getElementById("innovation-img").style.display="none";
+    document.getElementById("history-img").style.display="none";
+	}
+	function historyButton(){
+	    hideAll();
+	    document.getElementById("history-text").style.display="inline-block";
+      document.getElementById("history-img").style.display="flex";
+	}
+	function innovationButton(){
+	    hideAll();
+	    document.getElementById("innovation-text").style.display="inline-block";
+      document.getElementById("innovation-img").style.display="inline-block";
+	}
+	function videoButton(){
+	    hideAll();
+	  	document.getElementById("vid").style.display="block";
+	}
 </script>
 
 </body>
