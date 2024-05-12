@@ -13,9 +13,9 @@
 		button{margin-top:1%; display: inline-block; height:3vw; width:10vw; outline:none; cursor:pointer; font-size:1.5vw; font-weight:600; border-radius:1vw;
 		  border:none; background: #fe0000; color:#fff; text-align: center; margin-left:10%; font-variant:small-caps;}
 		#innovation-text{display:none; margin-left:10%; width:41vw; font-size:1.75vw; text-indent:3vw;}
-		#history-text{display:none; margin-left:10%; width:41vw; font-size:1.75vw; text-indent:3vw;}
+		#history-text{display:inline-block; margin-left:10%; width:41vw; font-size:1.75vw; text-indent:3vw;}
 		#innovation-img{height:18vw; width:32vw; display:none; margin: 0 auto 0 10%; object-fit:cover;}
-		#history-img{height:18vw; width:32vw; display:none; margin: 0 auto 0 10%; object-fit:cover;}
+		#history-img{height:18vw; width:32vw; display:inline-block; margin: 0 auto 0 10%; object-fit:cover;}
 	</style>
 </head>
 <body>
@@ -56,7 +56,7 @@
 	function historyButton(){
 	    hideAll();
 	    document.getElementById("history-text").style.display="inline-block";
-      document.getElementById("history-img").style.display="flex";
+      document.getElementById("history-img").style.display="inline-block";
 	}
 	function innovationButton(){
 	    hideAll();
